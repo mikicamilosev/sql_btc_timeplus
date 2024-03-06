@@ -8,6 +8,4 @@ to_time(raw:time) AS ttamp,
 raw:trade_id AS trade_id,
 cast(raw:last_size,'decimal(20,8)') AS last_size
 FROM
-btc_coinbase_trades_raw
-GROUP BY
-minute_start
+btc_coinbase_trades_extracted

@@ -4,7 +4,7 @@ WITH PriceClusters AS (
         CAST(floor(price/2.0)*2.0 AS DECIMAL(10,2)) AS price_cluster,
         side,
         sum(CAST(last_size AS DECIMAL(10,2))) AS total_amount,
-        count(*) as trade_count
+        count(*) as trade_count,
     FROM btc_coinbase_trades_extracted
     GROUP BY product_id, price_cluster, side 
 )
